@@ -56,6 +56,5 @@ so why did you put this garbage on the 'net?
 ============================================
 
 * There's value in seeing some of the same information as elsewhere with honest caveats.
-* It is better than what you'll find elsewhere.
 * You can send me pull requests and make it better for everyone, unlike some closed blog post or Q&A article from 2011.
 * Somebody out there can see this and tell me there's already a great implementation that I couldn't find myself, which would be thrilling.  (Being willing to look stupid is a great way to learn.)
