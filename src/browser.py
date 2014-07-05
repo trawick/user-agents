@@ -102,13 +102,21 @@ class Browser(object):
                         return False
             return True
 
-        m = re.search('Android .*Opera Mobi/.* Version/([0-9]+[\.0-9][0-9]*)$', self.user_agent)
+        m = re.search('Android.*Opera Mobi/.* Version/([0-9]+[\.0-9][0-9]*)$', self.user_agent)
         if m:
             try:
                 version = float(m.group(1))
             except ValueError:  # regex ensures that it is a floating point, but in case of range errors
                 version = 99.0  # assume it is a future version that we can't recognize
             return version >= 10.1
+
+        m = re.search('Android.*Opera Mini/.* Version/([0-9]+[\.0-9][0-9]*)$', self.user_agent)
+        if m:
+            try:
+                version = float(m.group(1))
+            except ValueError:  # regex ensures that it is a floating point, but in case of range errors
+                version = 99.0  # assume it is a future version that we can't recognize
+            return version >= 11.1  # I don't have any good information about support.  I tested this version myself.
 
         m = re.search(' Konqueror/([0-9]+[\.0-9]+)', self.user_agent)
         if m:
@@ -142,6 +150,7 @@ def self_test():
              (False, 'Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 5.1; FDM; .NET CLR 1.1.4322)'),
              (True, 'Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)'),
              (True, 'Opera/9.80 (Android 2.3.5; Linux; Opera Mobi/ADR-1309251116) Presto/2.11.355 Version/12.10'),
+             (True, 'Opera/9.80 (Android; Opera Mini/7.5.35613/35.3226; U; en) Presto/2.8.119 Version/11.10'),
              (True, 'Mozilla/5.0 (X11; Linux) KHTML/4.9.1 (like Gecko) Konqueror/4.9'),
              (False, 'Mozilla/5.0 (compatible; Konqueror/3.5; Windows NT 6.0) KHTML/3.5.6 (like Gecko)'),
              ]
