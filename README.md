@@ -24,7 +24,9 @@ or
 
 The first flavor is useful on Google App Engine, where you get https://appid.appspot.com/ for free, https://foo.customdomain.com/ (SNI only) for free or for very cheap, and you pay $39.00/month or so for a dedicated IP, which allows all browsers to connect to your custom domain over SSL/TLS.  You want SSL/TLS, of course; redirect SNI-capable clients to your SNI-only custom domain, and redirect non-SNI-capable clients (or those you can't identify) to appspot.com.
 
-A bit of a bummer: Some browsers that don't support SNI may not support the signer of your certificate.  E.g., my 1st generation iPod touch with iOS 3.1.3 doesn't support SNI and doesn't support (out of the box) the signer of the *.appspot.com certificate, so it is just plain too old to have a good user experience.
+The second flavor seems very bogus IMO, but some people do that.
+
+A bit of a bummer: Some browsers that don't support SNI may not support the signer of modern certificates.  E.g., my 1st generation iPod touch with iOS 3.1.3 doesn't support SNI and doesn't support (out of the box) the signer of the *.appspot.com certificate, so it is just plain too old to have a good user experience.
 
 checking for features besides SNI
 =================================
@@ -56,6 +58,5 @@ so why did you put this garbage on the 'net?
 ============================================
 
 * There's value in seeing some of the same information as elsewhere with honest caveats.
-* It is better than what you'll find elsewhere.
 * You can send me pull requests and make it better for everyone, unlike some closed blog post or Q&A article from 2011.
 * Somebody out there can see this and tell me there's already a great implementation that I couldn't find myself, which would be thrilling.  (Being willing to look stupid is a great way to learn.)
