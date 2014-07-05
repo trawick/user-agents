@@ -153,6 +153,8 @@ def self_test():
              (True, 'Opera/9.80 (Android; Opera Mini/7.5.35613/35.3226; U; en) Presto/2.8.119 Version/11.10'),
              (True, 'Mozilla/5.0 (X11; Linux) KHTML/4.9.1 (like Gecko) Konqueror/4.9'),
              (False, 'Mozilla/5.0 (compatible; Konqueror/3.5; Windows NT 6.0) KHTML/3.5.6 (like Gecko)'),
+             # Is it Chrome, or is it Opera?  It is Chrome-based Opera 22, and the rules identify it as Chrome.  Shrug.
+             (True, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36 OPR/22.0.1471.70'),
              ]
 
     for res, agent in tests:
